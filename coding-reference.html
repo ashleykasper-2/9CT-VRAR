@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VR Coding Reference</title>
+<style>
+:root{--red:#a71930;--rd:#741020;--green:#0f6f3d;--ink:#202833;--bg:#f7f7f5;--line:#d9dfe4}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+header{background:#fff;border-bottom:6px solid var(--red);padding:22px}
+main{max-width:1000px;margin:24px auto;padding:0 20px 60px}
+h1,h2{color:var(--rd)}
+section{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;margin:16px 0}
+pre{background:#081018;color:#eaf7ef;padding:14px;border-radius:10px;overflow:auto;white-space:pre-wrap}
+code{font-family:Consolas,Monaco,monospace}
+table{width:100%;border-collapse:collapse}
+td,th{border:1px solid var(--line);padding:9px;text-align:left;vertical-align:top}
+th{background:#eaf6ee}
+a{color:var(--rd);font-weight:700}
+.back{display:inline-block;margin-top:10px}
+</style>
+</head>
+<body>
+<header>
+  <h1>VR Coding Reference</h1>
+  <p>HTML + A-Frame + JavaScript quick reference</p>
+</header>
+<main>
+<a class="back" href="../index.html">← Back to course website</a>
+
+<section>
+<h2>1. HTML document structure</h2>
+<pre><code>&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;My page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  Page content goes here.
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</section>
+
+<section>
+<h2>2. A-Frame setup</h2>
+<pre><code>&lt;script src="https://aframe.io/releases/1.7.1/aframe.min.js"&gt;&lt;/script&gt;
+
+&lt;a-scene&gt;
+  &lt;!-- VR objects go here --&gt;
+&lt;/a-scene&gt;</code></pre>
+</section>
+
+<section>
+<h2>3. Common A-Frame primitives</h2>
+<table>
+<tr><th>Primitive</th><th>Example</th></tr>
+<tr><td>Box</td><td><code>&lt;a-box position="0 1 -3" color="red"&gt;&lt;/a-box&gt;</code></td></tr>
+<tr><td>Sphere</td><td><code>&lt;a-sphere position="0 1 -3" radius="1" color="blue"&gt;&lt;/a-sphere&gt;</code></td></tr>
+<tr><td>Cylinder</td><td><code>&lt;a-cylinder position="0 1 -3" radius="0.5" height="2"&gt;&lt;/a-cylinder&gt;</code></td></tr>
+<tr><td>Plane</td><td><code>&lt;a-plane rotation="-90 0 0" width="10" height="10"&gt;&lt;/a-plane&gt;</code></td></tr>
+<tr><td>Text</td><td><code>&lt;a-text value="Hello" position="0 2 -3"&gt;&lt;/a-text&gt;</code></td></tr>
+</table>
+</section>
+
+<section>
+<h2>4. Position, rotation and scale</h2>
+<p>A-Frame uses <strong>x y z</strong>.</p>
+<pre><code>position="2 1 -4"
+rotation="0 45 0"
+scale="1.5 1.5 1.5"</code></pre>
+<ul>
+<li>X = left/right</li>
+<li>Y = up/down</li>
+<li>Z = forward/backward</li>
+</ul>
+</section>
+
+<section>
+<h2>5. IDs</h2>
+<pre><code>&lt;a-box id="finalDoor"&gt;&lt;/a-box&gt;
+
+&lt;script&gt;
+const door = document.getElementById('finalDoor');
+&lt;/script&gt;</code></pre>
+</section>
+
+<section>
+<h2>6. Variables</h2>
+<pre><code>let keysCollected = 0;
+let puzzleSolved = false;
+let playerName = 'Alex';</code></pre>
+</section>
+
+<section>
+<h2>7. Events</h2>
+<pre><code>button.addEventListener('click', function () {
+  button.setAttribute('color', 'green');
+});</code></pre>
+</section>
+
+<section>
+<h2>8. If / else</h2>
+<pre><code>if (keysCollected &gt;= 3) {
+  openDoor();
+} else {
+  showMessage('Find more keys.');
+}</code></pre>
+</section>
+
+<section>
+<h2>9. Functions</h2>
+<pre><code>function showMessage(message) {
+  text.setAttribute('value', message);
+}
+
+showMessage('Puzzle solved!');</code></pre>
+</section>
+
+<section>
+<h2>10. Animation</h2>
+<pre><code>door.setAttribute('animation', {
+  property: 'position',
+  to: '3 1.5 -4',
+  dur: 700
+});</code></pre>
+</section>
+
+<section>
+<h2>11. Debugging checklist</h2>
+<ol>
+<li>Check every opening tag has a closing tag.</li>
+<li>Check quotation marks.</li>
+<li>Check braces <code>{ }</code> and parentheses <code>( )</code>.</li>
+<li>Check IDs match exactly.</li>
+<li>Open the browser console and read error messages.</li>
+<li>Use <code>console.log(variableName);</code> to inspect values.</li>
+<li>Return to the last working version and change one thing at a time.</li>
+</ol>
+</section>
+
+<section>
+<h2>Official help</h2>
+<ul>
+<li><a href="https://aframe.io/" target="_blank" rel="noopener">A-Frame</a></li>
+<li><a href="https://aframe.io/docs/" target="_blank" rel="noopener">A-Frame documentation</a></li>
+<li><a href="https://aframe.io/aframe-school/" target="_blank" rel="noopener">A-Frame School</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content/Basic_HTML_syntax" target="_blank" rel="noopener">MDN HTML basics</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript" target="_blank" rel="noopener">MDN JavaScript introduction</a></li>
+</ul>
+</section>
+</main>
+</body>
+</html>

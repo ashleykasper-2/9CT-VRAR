@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="360" height="180" viewBox="0 0 360 180" role="img" aria-labelledby="title desc">
-<title id="title">Menai High School</title>
-<desc id="desc">Text fallback used if the school logo cannot be loaded.</desc>
-<rect width="360" height="180" rx="18" fill="#ffffff"/>
-<circle cx="86" cy="90" r="56" fill="#a71930"/>
-<text x="86" y="104" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#ffffff">MHS</text>
-<text x="164" y="80" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#741020">Menai High</text>
-<text x="164" y="112" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#741020">School</text>
-</svg>

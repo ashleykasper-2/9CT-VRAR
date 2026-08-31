@@ -2758,180 +2758,231 @@ VR Safety, Ethics & Accessibility
 END LESSON 03
 =========================================================
 -->
-  <!-- =========================================================
+<!-- =========================================================
      START LESSON 04  |  WEEK 2
      Your First A-Frame Scene
      ========================================================= -->
 
-<section class="panel lesson-panel" id="lesson-4">
+<section
+  class="panel lesson-panel"
+  data-panel=""
+  id="lesson-4"
+>
 
   <!-- ---------------- A. LESSON HEADER ---------------- -->
-  <span class="eyebrow">Week 2 · Lesson 4</span>
 
-  <h2>Your First A-Frame Scene</h2>
+  <span class="eyebrow">
+    Week 2 · Lesson 4
+  </span>
+
+  <h2>
+    Your First A-Frame Scene
+  </h2>
 
   <div class="lesson-meta">
     <span class="tag">60-minute lesson</span>
-    <span class="tag">A-Frame &amp; HTML</span>
+    <span class="tag">HTML + A-Frame</span>
     <span class="tag">VR Escape Room project</span>
   </div>
 
   <div class="callout">
     <strong>Relevant syllabus outcomes</strong>
-    <p>CT5-OPL-01, CT5-DPM-01, CT5-THI-01</p>
+    <p>
+      CT5-OPL-01, CT5-DPM-01, CT5-THI-01
+    </p>
   </div>
 
 
   <!-- ---------------- B. KEY TERMINOLOGY ---------------- -->
+
   <div class="key-terms">
-    <h3>Key terminology</h3>
+
+    <h3>
+      Key terminology
+    </h3>
 
     <dl>
+
       <dt>HTML</dt>
       <dd>
-        HyperText Markup Language. A language used to describe the structure
-        and content of a webpage using elements and tags.
+        HyperText Markup Language. A language used to describe the
+        structure and content of a webpage using elements and tags.
       </dd>
 
       <dt>A-Frame</dt>
       <dd>
-        A web framework that allows developers to create 3D and virtual reality
-        environments using HTML-style elements.
+        A web framework that allows developers to create 3D and virtual
+        reality environments using HTML-style elements.
       </dd>
 
       <dt>Element</dt>
       <dd>
-        A piece of HTML content created using tags. In A-Frame, elements such as
-        <code>&lt;a-box&gt;</code>, <code>&lt;a-sphere&gt;</code> and
-        <code>&lt;a-scene&gt;</code> are used to create parts of a 3D environment.
+        A piece of content created using HTML tags. In A-Frame,
+        elements such as <code>&lt;a-box&gt;</code> and
+        <code>&lt;a-sphere&gt;</code> create objects inside the
+        virtual environment.
       </dd>
 
       <dt>Tag</dt>
       <dd>
-        The code used to identify an HTML element. Most elements have an opening
-        tag and a closing tag, such as
+        The code used to identify an HTML element. Most elements have
+        an opening tag and a closing tag, such as
         <code>&lt;a-box&gt;&lt;/a-box&gt;</code>.
       </dd>
 
       <dt>Attribute</dt>
       <dd>
-        Extra information written inside an opening tag that controls an
-        element's properties, such as its position, colour, size or rotation.
+        Extra information placed inside an opening tag that controls
+        properties such as position, colour, size or rotation.
       </dd>
 
       <dt>Scene</dt>
       <dd>
-        The complete 3D environment created inside the
-        <code>&lt;a-scene&gt;</code> element. All A-Frame objects, cameras,
-        lights and other virtual elements are placed inside the scene.
+        The complete 3D environment contained inside the
+        <code>&lt;a-scene&gt;</code> element.
       </dd>
 
       <dt>Entity</dt>
       <dd>
-        An object that exists inside an A-Frame scene. Entities can represent
-        visible objects, cameras, lights or invisible objects used for
-        interaction and programming.
+        An object that exists inside an A-Frame scene. An entity may
+        represent a visible 3D object, camera, light or interactive
+        object.
       </dd>
+
     </dl>
+
   </div>
 
 
   <!-- ---------------- C. READ AND UNDERSTAND ---------------- -->
+
   <div class="reading">
-    <h3>Read and understand</h3>
+
+    <h3>
+      Read and understand
+    </h3>
 
     <p>
-      A-Frame is a framework for creating interactive 3D and virtual reality
-      experiences in a web browser. It allows us to create 3D environments
-      using code that looks very similar to HTML. This means we can begin
-      creating VR experiences without needing to learn complicated 3D graphics
-      programming first.
+      Before we begin creating virtual reality environments, we need
+      to understand a little about how webpages are constructed.
+      A-Frame uses <strong>HTML</strong> as the foundation for building
+      3D scenes.
     </p>
 
     <p>
-      HTML is normally used to describe the structure of a webpage. It uses
-      elements that are identified by tags. For example, a normal webpage might
-      use a <code>&lt;p&gt;</code> element to create a paragraph or an
-      <code>&lt;h1&gt;</code> element to create a heading.
+      HTML normally describes the structure of a webpage. It uses
+      <strong>elements</strong> identified by tags. For example, a
+      normal webpage might use a
+      <code>&lt;p&gt;</code> element for a paragraph or an
+      <code>&lt;h1&gt;</code> element for a heading.
     </p>
 
     <p>
-      A-Frame adds its own special elements. Instead of only creating text and
-      images, we can use elements such as <code>&lt;a-box&gt;</code>,
-      <code>&lt;a-sphere&gt;</code> and <code>&lt;a-cylinder&gt;</code> to
-      create 3D objects.
+      A-Frame adds special HTML-style elements that represent objects
+      in three-dimensional space. For example,
+      <code>&lt;a-box&gt;</code> creates a box,
+      <code>&lt;a-sphere&gt;</code> creates a sphere and
+      <code>&lt;a-plane&gt;</code> can be used to create a floor or
+      wall.
     </p>
 
     <p>
-      Every A-Frame environment begins with an
-      <code>&lt;a-scene&gt;</code>. The scene acts as the container for the
-      entire virtual world. Objects placed outside the scene will not become
-      part of the 3D environment.
+      Every A-Frame virtual environment begins with an
+      <code>&lt;a-scene&gt;</code>. Think of the scene as the container
+      for the entire virtual world. The objects, lights, camera and
+      interactive elements all belong inside this scene.
     </p>
 
     <p>
-      Attributes are used to control objects. For example:
+      We control objects by adding <strong>attributes</strong> to their
+      opening tags.
     </p>
 
     <pre><code>&lt;a-box position="1 1 -4" color="blue"&gt;&lt;/a-box&gt;</code></pre>
 
     <p>
-      The element is <code>&lt;a-box&gt;</code>. The
-      <code>position</code> and <code>color</code> attributes provide
-      instructions about where the box should appear and what it should look
-      like.
+      In this example, <code>&lt;a-box&gt;</code> tells A-Frame which
+      object to create. The <code>position</code> attribute tells
+      A-Frame where to place the object and the <code>color</code>
+      attribute controls its appearance.
     </p>
 
     <p>
-      When learning A-Frame, it is important to make one change at a time.
-      Change one value, reload the page and observe what happens. This makes it
-      much easier to understand how the code controls the scene and to identify
-      errors when something does not work.
+      When learning to code, one of the most useful habits is to
+      <strong>change one thing at a time</strong>. Run the code first,
+      make one small change, run it again and observe what changed.
+      This makes programming much easier to understand and debug.
     </p>
+
   </div>
 
 
   <div class="sequence self-paced-sequence">
 
-    <!-- ---------------- D. WORKED EXAMPLE ---------------- -->
-    <div class="step worked-example">
-      <h4>1. Worked example</h4>
 
-      <p><strong>Reading your first A-Frame object</strong></p>
+    <!-- ---------------- D. WORKED EXAMPLE ---------------- -->
+
+    <div class="step worked-example">
+
+      <h4>
+        1. Worked example
+      </h4>
+
+      <p>
+        Look carefully at this A-Frame element:
+      </p>
 
       <pre><code>&lt;a-box position="1 1 -4" color="blue"&gt;&lt;/a-box&gt;</code></pre>
 
-      <p>This single line creates a 3D box.</p>
+      <p>
+        We can break the line into smaller pieces.
+      </p>
 
       <ul>
+
         <li>
-          <code>&lt;a-box&gt;</code> tells A-Frame which type of object to create.
+          <code>&lt;a-box&gt;</code> tells A-Frame to create a box.
         </li>
+
         <li>
-          <code>position="1 1 -4"</code> tells A-Frame where the box should appear.
+          <code>position="1 1 -4"</code> tells A-Frame where the box
+          should appear.
         </li>
+
         <li>
-          <code>color="blue"</code> changes the appearance of the box.
+          <code>color="blue"</code> makes the box blue.
         </li>
+
         <li>
           <code>&lt;/a-box&gt;</code> closes the element.
         </li>
+
       </ul>
 
       <p>
-        A useful way to read A-Frame code is to first identify the object and
-        then examine each attribute individually.
+        When reading unfamiliar code, identify the element first and
+        then examine each attribute separately.
       </p>
+
     </div>
 
 
     <!-- ---------------- E. GUIDED PRACTICE ---------------- -->
+
     <div class="step guided-practice">
-      <h4>2. Guided practice</h4>
 
-      <p>Look at the two objects below before running the code.</p>
+      <h4>
+        2. Guided practice
+      </h4>
 
-      <pre><code>&lt;a-sphere position="-2 1 -3" color="yellow"&gt;&lt;/a-sphere&gt;
+      <p>
+        Look at the code below.
+      </p>
+
+      <pre><code>&lt;a-sphere
+  position="-2 1 -3"
+  color="yellow"&gt;
+&lt;/a-sphere&gt;
 
 &lt;a-cylinder
   position="0 0.75 -5"
@@ -2940,29 +2991,40 @@ END LESSON 03
 &lt;/a-cylinder&gt;</code></pre>
 
       <p>
-        Predict what each object will look like and where you think it will
-        appear in the scene.
+        Before running the code, predict:
       </p>
+
+      <ol>
+        <li>Which two shapes will appear?</li>
+        <li>What colour will each object be?</li>
+        <li>Which object do you think will appear further away?</li>
+      </ol>
 
       <textarea
         class="save-field"
         data-key="l4-guided"
-        placeholder="Describe the two objects and predict where they will appear..."
+        placeholder="Write your predictions here..."
       ></textarea>
+
     </div>
 
 
     <!-- ---------------- F. INTERACTIVE PRACTICE ---------------- -->
+
     <div
       class="step enhanced-practice varied-practice"
       data-answer="&lt;a-scene&gt;"
       data-kind="code_exact"
       data-lesson-interaction="4"
     >
-      <h4>Your first A-Frame tag</h4>
+
+      <h4>
+        Your first A-Frame tag
+      </h4>
 
       <p>
-        Type the opening HTML tag used to begin an A-Frame virtual environment.
+        Type the opening tag used to begin an A-Frame virtual
+        environment.
       </p>
 
       <textarea
@@ -2971,105 +3033,175 @@ END LESSON 03
         spellcheck="false"
       ></textarea>
 
-      <button class="btn var-check-code" type="button">
+      <button
+        class="btn var-check-code"
+        type="button"
+      >
         Mark my code
       </button>
 
-      <div class="var-feedback" aria-live="polite"></div>
+      <div
+        class="var-feedback"
+        aria-live="polite"
+      ></div>
+
     </div>
 
 
-    <div class="step interactive-check">
-      <h4>3. Check your understanding</h4>
+    <!-- ---------------- CHECK YOUR UNDERSTANDING ---------------- -->
 
-      <p>
-        Answer both questions before continuing.
-      </p>
+    <div class="step interactive-check">
+
+      <h4>
+        3. Check your understanding
+      </h4>
 
       <div class="quiz-card">
 
-        <div class="quiz-q" data-answer="0">
+
+        <div
+          class="quiz-q"
+          data-answer="0"
+        >
+
           <p>
             <strong>
-              1. Which element contains the complete A-Frame virtual world?
+              1. Which element contains the complete A-Frame virtual
+              world?
             </strong>
           </p>
 
           <label class="quiz-option">
-            <input type="radio" name="tb-l4q1" value="0">
+            <input
+              name="tb-l4q1"
+              type="radio"
+              value="0"
+            >
             &lt;a-scene&gt;
           </label>
 
           <label class="quiz-option">
-            <input type="radio" name="tb-l4q1" value="1">
+            <input
+              name="tb-l4q1"
+              type="radio"
+              value="1"
+            >
             &lt;a-box&gt;
           </label>
 
           <label class="quiz-option">
-            <input type="radio" name="tb-l4q1" value="2">
+            <input
+              name="tb-l4q1"
+              type="radio"
+              value="2"
+            >
             &lt;script&gt;
           </label>
 
           <label class="quiz-option">
-            <input type="radio" name="tb-l4q1" value="3">
-            &lt;title&gt;
+            <input
+              name="tb-l4q1"
+              type="radio"
+              value="3"
+            >
+            &lt;body&gt;
           </label>
 
-          <div class="quiz-feedback" aria-live="polite"></div>
+          <div
+            class="quiz-feedback"
+            aria-live="polite"
+          ></div>
+
         </div>
 
 
-        <div class="quiz-q" data-answer="1">
+        <div
+          class="quiz-q"
+          data-answer="1"
+        >
+
           <p>
             <strong>
-              2. In the code below, what is <code>color="red"</code>?
+              2. In the code below, what is
+              <code>color="red"</code>?
             </strong>
           </p>
 
           <pre><code>&lt;a-box color="red"&gt;&lt;/a-box&gt;</code></pre>
 
           <label class="quiz-option">
-            <input type="radio" name="tb-l4q2" value="0">
+            <input
+              name="tb-l4q2"
+              type="radio"
+              value="0"
+            >
             An element
           </label>
 
           <label class="quiz-option">
-            <input type="radio" name="tb-l4q2" value="1">
+            <input
+              name="tb-l4q2"
+              type="radio"
+              value="1"
+            >
             An attribute and its value
           </label>
 
           <label class="quiz-option">
-            <input type="radio" name="tb-l4q2" value="2">
+            <input
+              name="tb-l4q2"
+              type="radio"
+              value="2"
+            >
             A closing tag
           </label>
 
           <label class="quiz-option">
-            <input type="radio" name="tb-l4q2" value="3">
+            <input
+              name="tb-l4q2"
+              type="radio"
+              value="3"
+            >
             JavaScript
           </label>
 
-          <div class="quiz-feedback" aria-live="polite"></div>
+          <div
+            class="quiz-feedback"
+            aria-live="polite"
+          ></div>
+
         </div>
 
-        <button class="primary check-quiz" type="button">
+
+        <button
+          class="primary check-quiz"
+          type="button"
+        >
           Check answers
         </button>
 
       </div>
+
     </div>
 
 
     <!-- ---------------- G. CODING TUTORIAL ---------------- -->
+
     <div class="html-foundation">
-      <h4>Before you code: What is HTML?</h4>
+
+      <h4>
+        Before you code: What is HTML?
+      </h4>
 
       <p>
-        HTML stands for <strong>HyperText Markup Language</strong>. It is used
-        to describe the structure of a webpage.
+        HTML stands for
+        <strong>HyperText Markup Language</strong>.
+        It describes the structure of a webpage.
       </p>
 
       <p>
-        HTML uses tags. Most tags contain an opening tag and a closing tag.
+        HTML uses tags. Most tags have an opening tag and a closing
+        tag.
       </p>
 
       <div class="mini-code">
@@ -3077,13 +3209,14 @@ END LESSON 03
       </div>
 
       <p>
-        The opening tag is <code>&lt;p&gt;</code> and the closing tag is
-        <code>&lt;/p&gt;</code>. The slash tells the browser that the element
-        has finished.
+        The opening tag is <code>&lt;p&gt;</code>.
+        The closing tag is <code>&lt;/p&gt;</code>.
+        The slash tells the browser that the element has finished.
       </p>
 
-
-      <h4>A basic HTML document</h4>
+      <h4>
+        Basic HTML structure
+      </h4>
 
       <div class="mini-code">
 &lt;!doctype html&gt;
@@ -3103,51 +3236,48 @@ END LESSON 03
 &lt;/html&gt;
       </div>
 
-      <ul class="code-steps">
-        <li>
-          <code>&lt;!doctype html&gt;</code> tells the browser that the file
-          uses modern HTML.
-        </li>
-
-        <li>
-          <code>&lt;html&gt;</code> contains the entire webpage.
-        </li>
-
-        <li>
-          <code>&lt;head&gt;</code> contains information about the webpage and
-          links to external libraries.
-        </li>
-
-        <li>
-          <code>&lt;body&gt;</code> contains the visible content of the page.
-        </li>
-      </ul>
-
-
       <div class="tip">
         <strong>Important:</strong>
-        A-Frame uses HTML, but adds special elements such as
+        A-Frame uses HTML but adds special elements such as
         <code>&lt;a-scene&gt;</code>,
         <code>&lt;a-box&gt;</code> and
         <code>&lt;a-sphere&gt;</code>.
       </div>
+
     </div>
 
 
     <div class="step coding-tutorial">
-      <h4>4. Coding tutorial — Build your first scene</h4>
+
+      <h4>
+        4. Coding tutorial — Build your first scene
+      </h4>
 
       <p>
-        Copy the entire example below into your code editor.
+        The editor below contains a complete working A-Frame webpage.
       </p>
 
       <p>
-        <strong>Do not change anything yet.</strong>
-        Run the original code first so you know that the starting version works.
+        <strong>
+          First press Run Preview without changing anything.
+        </strong>
       </p>
 
-      <pre><code>&lt;!doctype html&gt;
+      <p>
+        Once you know the starting code works, make one change at a
+        time and run the preview again.
+      </p>
 
+
+      <!-- WORKING LIVE CODE LAB -->
+
+      <div class="code-lab">
+
+        <textarea
+          class="code-editor save-field"
+          data-key="l4-live-code"
+          spellcheck="false"
+        >&lt;!doctype html&gt;
 &lt;html&gt;
 
 &lt;head&gt;
@@ -3155,7 +3285,6 @@ END LESSON 03
   &lt;script src="https://aframe.io/releases/1.7.1/aframe.min.js"&gt;&lt;/script&gt;
 
 &lt;/head&gt;
-
 
 &lt;body&gt;
 
@@ -3166,147 +3295,231 @@ END LESSON 03
       color="red"&gt;
     &lt;/a-box&gt;
 
-
     &lt;a-sphere
       position="1 1 -4"
       color="blue"&gt;
     &lt;/a-sphere&gt;
-
 
     &lt;a-plane
       position="0 0 -4"
       rotation="-90 0 0"
       width="10"
       height="10"
-      color="#DDD"&gt;
+      color="#DDDDDD"&gt;
     &lt;/a-plane&gt;
 
-
-    &lt;a-sky color="#EEE"&gt;&lt;/a-sky&gt;
+    &lt;a-sky
+      color="#EEEEEE"&gt;
+    &lt;/a-sky&gt;
 
   &lt;/a-scene&gt;
 
 &lt;/body&gt;
 
-&lt;/html&gt;</code></pre>
+&lt;/html&gt;</textarea>
 
 
-      <h4>Step 1 — Run the original code</h4>
+        <div class="button-row">
+
+          <button
+            class="primary run-code"
+            type="button"
+          >
+            ▶ Run Preview
+          </button>
+
+        </div>
+
+
+        <iframe
+          class="preview"
+          title="A-Frame code preview"
+        ></iframe>
+
+      </div>
+
+
+      <h4>
+        Step 1 — Change a colour
+      </h4>
 
       <p>
-        You should see a red box, a blue sphere, a floor and a light-coloured
-        background.
+        Find:
       </p>
-
-
-      <h4>Step 2 — Change the colour</h4>
-
-      <p>Find:</p>
 
       <pre><code>color="red"</code></pre>
 
-      <p>Change it to:</p>
+      <p>
+        Change it to:
+      </p>
 
       <pre><code>color="green"</code></pre>
 
       <p>
-        Run the scene again and check that only the box colour changes.
+        Run the preview again. Only the colour of the box should
+        change.
       </p>
 
 
-      <h4>Step 3 — Change an object</h4>
+      <h4>
+        Step 2 — Move the box
+      </h4>
 
       <p>
-        Change the sphere into another A-Frame primitive, such as:
+        Find:
+      </p>
+
+      <pre><code>position="-1 1 -3"</code></pre>
+
+      <p>
+        Change it to:
+      </p>
+
+      <pre><code>position="-2 1 -3"</code></pre>
+
+      <p>
+        Run the preview and observe what happens.
+      </p>
+
+
+      <h4>
+        Step 3 — Add another object
+      </h4>
+
+      <p>
+        Add this code somewhere inside
+        <code>&lt;a-scene&gt;</code>:
       </p>
 
       <pre><code>&lt;a-cylinder
-  position="1 1 -4"
-  color="blue"&gt;
+  position="0 1 -5"
+  color="yellow"&gt;
 &lt;/a-cylinder&gt;</code></pre>
 
-
-      <h4>Step 4 — Add another object</h4>
-
       <p>
-        Add another box or sphere somewhere inside
-        <code>&lt;a-scene&gt;</code>.
+        Run the preview again. You should now have three 3D objects.
       </p>
 
 
-      <h4>Step 5 — Record what you changed</h4>
+      <h4>
+        Step 4 — Experiment
+      </h4>
+
+      <p>
+        Make at least three changes to the scene.
+      </p>
 
       <textarea
         class="save-field"
-        data-key="l4-code"
-        placeholder="Record at least three changes you made and explain what happened when you ran the scene..."
+        data-key="l4-code-reflection"
+        placeholder="Describe three changes you made and explain what happened..."
       ></textarea>
+
     </div>
 
 
     <!-- ---------------- H. INDEPENDENT CHALLENGE ---------------- -->
+
     <div class="step independent-challenge">
-      <h4>5. Independent challenge</h4>
+
+      <h4>
+        5. Independent challenge
+      </h4>
 
       <p>
-        Create a small virtual sculpture using A-Frame primitives.
+        Create your own small virtual sculpture.
       </p>
 
-      <p>Your scene must include:</p>
+      <p>
+        Your scene must contain:
+      </p>
 
       <ul>
-        <li>at least five 3D objects</li>
-        <li>at least three different primitive types</li>
-        <li>objects positioned at different heights</li>
-        <li>objects positioned at different distances</li>
-        <li>a floor</li>
-        <li>a sky/background</li>
+
+        <li>
+          at least five 3D objects
+        </li>
+
+        <li>
+          at least three different A-Frame primitive types
+        </li>
+
+        <li>
+          objects at different heights
+        </li>
+
+        <li>
+          objects at different distances
+        </li>
+
+        <li>
+          a floor
+        </li>
+
+        <li>
+          a sky/background
+        </li>
+
       </ul>
 
       <p>
-        Try to complete the challenge without copying the worked example exactly.
+        Try to create the scene using what you have learned rather
+        than copying the worked example exactly.
       </p>
 
       <textarea
         class="save-field"
         data-key="l4-challenge"
-        placeholder="Describe your finished scene. What worked? What problem did you need to solve?"
+        placeholder="Describe your finished scene and any problems you needed to solve..."
       ></textarea>
+
     </div>
 
 
     <!-- ---------------- I. ASSESSMENT CONNECTION ---------------- -->
+
     <div class="step assessment-connection">
-      <h4>Assessment connection</h4>
+
+      <h4>
+        Assessment connection
+      </h4>
 
       <p>
-        Your final assessment requires you to create a working VR Escape Room.
-        The scene you created today is the starting point for that project.
+        Your final assessment requires you to create a working
+        VR Escape Room.
       </p>
 
       <p>
-        Save a working copy of your HTML/A-Frame file. In future lessons you
-        will gradually add rooms, interactions, puzzle logic and JavaScript to
-        this file.
+        The A-Frame scene you created today is the foundation for
+        that project. Over the next lessons you will add rooms,
+        objects, interactions, variables and puzzle logic.
+      </p>
+
+      <p>
+        Save a working version of your scene before moving on.
       </p>
 
       <textarea
         class="save-field"
         data-key="l4-assessment"
-        placeholder="Explain which parts of today's code you could reuse when beginning your VR Escape Room..."
+        placeholder="Which parts of today's code will be useful when you begin your VR Escape Room?"
       ></textarea>
+
     </div>
 
   </div>
 
 
   <!-- ---------------- J. HELP LINKS ---------------- -->
+
   <div class="lesson-help-links">
-    <h4>Need help?</h4>
+
+    <h4>
+      Need help?
+    </h4>
 
     <p>
-      Use these resources if you need another explanation or want to see more
-      examples.
+      Use these tutorials if you need another explanation.
     </p>
 
     <div class="help-link-row">
@@ -3348,10 +3561,12 @@ END LESSON 03
       </a>
 
     </div>
+
   </div>
 
 
   <!-- ---------------- K. LESSON FOOTER ---------------- -->
+
   <div class="lesson-footer">
 
     <button
@@ -3377,7 +3592,6 @@ END LESSON 03
 <!-- =========================================================
      END LESSON 04
      ========================================================= -->
-    <!--
 =========================================================
 START LESSON 05  |  WEEK 2
 3D Coordinates: Position, Rotation & Scale
